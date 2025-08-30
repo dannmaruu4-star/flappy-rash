@@ -1,0 +1,40 @@
+:root{
+  --bg: linear-gradient(180deg,#70c5ce 0%, #5ec0cf 50%, #87e0f0 100%);
+  --card: rgba(255,255,255,0.06);
+  --accent: #ffdd57;
+  --text: #03303f;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial}
+body{
+  display:flex; align-items:center; justify-content:center;
+  background:var(--bg);
+  padding:20px;
+  color:var(--text);
+}
+
+.wrap{
+  width:100%;
+  max-width:420px;
+  text-align:center;
+}
+
+h1{margin:6px 0 10px 0; font-size:1.4rem}
+.hud{display:flex; justify-content:space-between; margin-bottom:8px; font-weight:600}
+.game-area{position:relative; margin:0 auto; display:flex; justify-content:center}
+canvas{display:block; border-radius:8px; background:linear-gradient(#9fe6ef,#6bdbe8); box-shadow:0 8px 20px rgba(0,0,0,0.15)}
+.mobile-controls{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-weight:700; color:rgba(255,255,255,0.6);
+  pointer-events:none; user-select:none; font-size:18px;
+}
+#tapArea{pointer-events:auto; cursor:pointer; opacity:0.12; transition:opacity .15s}
+#tapArea:active{opacity:0.25}
+
+.controls{margin-top:10px}
+button{padding:8px 14px; border-radius:8px; border:0; cursor:pointer; background:#ff7b7b; color:white; font-weight:600}
+.tip{font-size:0.85rem; color:rgba(3,48,63,0.7); margin-top:10px}
+@media (max-width:420px){
+  canvas{width:92vw; height:auto}
+}
